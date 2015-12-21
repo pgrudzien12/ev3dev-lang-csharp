@@ -1,0 +1,26 @@
+{% for item in classes %}{%
+    assign currentClass =  item[1]; %}
+    /// <summary>{% for line in currentClass.description %} 
+    /// {{ line }}{%
+    endfor %}
+    /// </summary>{% 
+    assign className = currentClass.friendlyName | camel_case | capitalize %}{%
+    assign inheritanceClassName = currentClass.inheritance | camel_case | capitalize %}{%
+    if inheritanceClassName == "Undefined" %}{%
+        assign inheritanceClassName = "Device" %}{%
+    endif %}
+    public partial class {{className}} : {{inheritanceClassName}}
+    { {% for prop in currentClass.propertyValues %}{%
+        for value in prop.values %}{%
+        assign csName = value.name | camel_case | replace:'&','And' | capitalize %}{%
+        assign prefix = prop.propertyName | camel_case | capitalize %}
+        /// <summary> {% for line in value.description %}
+        /// {{ line }}{%
+      endfor %}
+        /// </summary>
+        public const string {{prefix}}{{csName}} = "{{ value.name }}";
+        {% endfor %}{%
+        endfor %} 
+    } 
+    {%endfor %}
+    

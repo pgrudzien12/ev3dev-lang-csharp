@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0-*",
+  "description": "ShootDemo Console Application",
+  "authors": [ "pgrudzien12" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+  },
+
+  "commands": {
+    "ShootDemo": "ShootDemo"
+  },
+
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "ev3dev": "1.0.0-*"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "ev3dev Class Library",
+  "authors": [ "pgrudzien12" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "frameworks": {
+    "dnx451": { }
+  }
+}

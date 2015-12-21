@@ -1,0 +1,47 @@
+{% for item in classes %}{%
+    assign currentClass =  item[1]; %}
+    /// <summary>{% for line in currentClass.description %} 
+    /// {{ line }}{%
+    endfor %}
+    /// </summary>{% 
+    assign className = currentClass.friendlyName | camel_case | capitalize %}{%
+    assign inheritanceClassName = currentClass.inheritance | camel_case | capitalize %}{%
+    if inheritanceClassName == "Undefined" %}{%
+        assign inheritanceClassName = "Device" %}{%
+    endif %}
+    public partial class {{className}} : {{inheritanceClassName}}
+    { {% 
+        for prop in currentClass.systemProperties %}{% 
+        assign type = prop.type %}{%
+        assign getter = prop.type | capitalize %}{%
+        assign setter = prop.type | capitalize %}{%
+        assign name = prop.name | camel_case | capitalize %}{%
+        if prop.type == 'string array' %}{%
+           assign type  = 'string[]' %}{%
+           assign getter  = 'Set' %}{%
+           assign setter  = 'Set' %}{%
+        endif %}{%
+        if prop.type == 'string selector' %}{%
+           assign type  = 'string' %}{%
+           assign getter  = 'FromSet' %}{%
+           assign setter  = 'String' %}{%
+        endif %}
+        /// <summary> {% for line in prop.description %}
+        /// {{ line }}{%
+      endfor %}
+        /// </summary>
+        public {{type}} {{name}} 
+        { {% if prop.readAccess %}
+            get 
+            {
+                return GetAttr{{getter}}("{{prop.systemName}}");
+            } {% endif %}{%
+            if prop.writeAccess %}
+            set 
+            {
+                SetAttr{{setter}}("{{prop.systemName}}", value);
+            } {% endif %}
+        } 
+      {% endfor %}
+    }
+    {%endfor %}

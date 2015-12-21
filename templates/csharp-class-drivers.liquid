@@ -1,0 +1,7 @@
+{% for item in classes %}{%
+    assign currentClass =  item[1]; %}{%
+    assign className = currentClass.friendlyName | camel_case | capitalize %}{%
+    for driver in currentClass.driverName %}
+        public const string {{driver | camel_case | capitalize}} = "{{driver}}"; {%
+      endfor %}{%
+endfor %}

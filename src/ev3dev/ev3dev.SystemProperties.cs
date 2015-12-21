@@ -28,7 +28,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ev3dev
+namespace Ev3devLang
 {
 
 //~autogen csharp-class-systemProperties classes>classes

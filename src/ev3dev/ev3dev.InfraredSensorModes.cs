@@ -24,7 +24,7 @@
 
 //~autogen
 
-namespace ev3dev
+namespace Ev3devLang
 {
     
     public partial class InfraredSensor

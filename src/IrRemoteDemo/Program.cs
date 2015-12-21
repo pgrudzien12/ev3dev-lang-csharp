@@ -18,7 +18,7 @@
  
 using System;
 using System.Threading;
-using ev3dev;
+using Ev3devLang;
 
 namespace IrRemote
 {

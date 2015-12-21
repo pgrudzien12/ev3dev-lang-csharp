@@ -22,7 +22,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ev3dev;
+using Ev3devLang;
 
 namespace ShootDemo
 {

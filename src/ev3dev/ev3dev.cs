@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ev3dev
+namespace Ev3devLang
 {
     public static class Inputs
     {
@@ -399,7 +399,7 @@ namespace ev3dev
 
     public partial class UltrasonicSensor
     {
-        public UltrasonicSensor()
+        public UltrasonicSensor(string port)
             : base(port, new [] { Drivers.LegoEv3Us, Drivers.LegoNxtUs })
         {
         }
@@ -407,7 +407,7 @@ namespace ev3dev
 
     public partial class GyroSensor
     {
-        public GyroSensor()
+        public GyroSensor(string port)
             : base(port, new[] { Drivers.LegoEv3Gyro })
         {
         }
@@ -433,7 +433,7 @@ namespace ev3dev
 
     public partial class LightSensor
     {
-        public LightSensor()
+        public LightSensor(string port)
             : base(port, new[] { Drivers.LegoNxtLight })
         {
         }

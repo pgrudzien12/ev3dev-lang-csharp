@@ -1,12 +1,25 @@
 ﻿{
-  "version": "1.0.0-*",
+  "title": "ev3dev",
   "description": "ev3dev Class Library",
-  "authors": [ "pgrudzien12" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
+  "authors": [ "pgrudzien12", "XperiAndri" ],
+  "version": "1.0.0-*",
+
+  "packOptions": {
+    "owners": [ "xperiandri" ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/pgrudzien12/ev3dev-lang-csharp"
+    },
+    "tags": [ "ev3dev", "Lego", "Mindstorm" ]
+  },
+
+  "dependencies": {
+    "NETStandard.Library": "1.5.0-rc2-24027"
+  },
 
   "frameworks": {
-    "dnx451": { }
+    "netstandard1.5": {
+      "imports": "dnxcore50"
+    }
   }
 }

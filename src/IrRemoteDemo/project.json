@@ -1,23 +1,22 @@
-{
+﻿{
   "version": "1.0.0-*",
-  "description": "IrRemote Console Application",
-  "authors": [ "pgrudzien12" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
-
-  "dependencies": {
+  "buildOptions": {
+    "emitEntryPoint": true
   },
 
-  "commands": {
-    "IrRemoteDemo": "IrRemoteDemo"
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0-rc2-3002702"
+    },
+    "ev3dev": "*"
   },
 
   "frameworks": {
-    "dnx451": {
-      "dependencies": {
-        "ev3dev": "1.0.0-*"
-      }
+    "netcoreapp1.0": {
+      "imports": [
+        "dnxcore50"
+      ]
     }
   }
 }

@@ -195,12 +195,12 @@ namespace Ev3devLang
 
         private StreamReader OpenStreamReader(string name)
         {
-            return new StreamReader(Path.Combine(_path, name));
+            return new StreamReader(new FileStream(Path.Combine(_path, name), FileMode.Open));
         }
 
         private StreamWriter OpenStreamWriter(string name)
         {
-            return new StreamWriter(Path.Combine(_path, name));
+            return new StreamWriter(new FileStream(Path.Combine(_path, name), FileMode.Create));
         }
 
         private void AssertConnected()

@@ -15,7 +15,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  */
- 
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,11 +26,11 @@ using Ev3devLang;
 namespace SensorDemo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Program
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Reading sensor data");
             Sensor s = new Sensor(string.Empty);
